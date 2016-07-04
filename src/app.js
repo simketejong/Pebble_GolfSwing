@@ -8,9 +8,9 @@ var UI = require('ui');
 /*var Vector2 = require('vector2');*/
 var Vibe = require('ui/vibe');
 var Accel = require('ui/accel');
-var myLat = "";
-var myLong = "";
-var myError = "";
+var myLat = 0;
+var myLong = 0;
+var myError = 0;
 
 var main = new UI.Card({
   title: 'GolfSwing',
