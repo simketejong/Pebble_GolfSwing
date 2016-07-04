@@ -8,17 +8,17 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 
 var main = new UI.Card({
-  title: 'Pebble.js',
+  title: 'GolfSwing',
   icon: 'images/menu_icon.png',
   subtitle: 'GolfSwing!',
-  body: 'Press any button.',
+  body: 'Shake to activate',
   subtitleColor: 'indigo', // Named colors
   bodyColor: '#9a0036' // Hex colors
 });
 
 main.show();
 
-main.on('click', 'up', function(e) {
+/**main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
     sections: [{
       items: [{
@@ -86,3 +86,4 @@ main.on('click', 'down', function(e) {
   card.body('The simplest window type in Pebble.js.');
   card.show();
 });
+*/
