@@ -23,6 +23,7 @@ main.show();
 Vibe.vibrate('short');
 main.on('accelTap', function(e) {
   Vibe.vibrate('long');
+  main.title('Shaken not st...')
 });
 
 /**main.on('click', 'up', function(e) {
