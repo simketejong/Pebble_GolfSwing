@@ -34,7 +34,7 @@ function locationSuccess(pos) {
 }
 
 function locationError(err) {
-    myError = err.code + ' ' + err.message;
+  myError = err.code + ' ' + err.message;
   console.log('location error (' + err.code + '): ' + err.message);
 }
 
