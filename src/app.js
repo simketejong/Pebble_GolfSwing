@@ -8,6 +8,9 @@ var UI = require('ui');
 /*var Vector2 = require('vector2');*/
 var Vibe = require('ui/vibe');
 var Accel = require('ui/accel');
+var myLat = "";
+var myLong = "";
+var myError = "";
 
 var main = new UI.Card({
   title: 'GolfSwing',
@@ -18,12 +21,57 @@ var main = new UI.Card({
   bodyColor: '#9a0036' // Hex colors
 });
 
+/* GPS stuf */
+var locationOptions = {
+  enableHighAccuracy: true, 
+  maximumAge: 10000, 
+  timeout: 10000
+};
+
+
+// Get the location
+function locationSuccess(pos) {
+/*  console.log('\n****** START ******\nhere I am:\nlat= ' + pos.coords.latitude + ' lon= ' + pos.coords.longitude + '\n'); // Just to se that it works fine*/
+    myLat = pos.coords.latitude;
+    myLong = pos.coords.longitude;
+/*  console.log('My location\n' + myLat + ' and ' + myLong + '\n****** THE END  02 ******\n'); // This does also work fine */
+}
+
+function locationError(err) {
+    myError = location error (' + err.code + '): ' + err.message);
+/*  console.log('location error (' + err.code + '): ' + err.message);*/
+}
+
+// Make an asynchronous request
+navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
+
+
+// Create a text object 
+var infotext = new UI.Text(
+{
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+    text : 'GPS:\n',
+  font: 'Gothic 28',
+  color: 'white',
+  textAlign: 'center'   
+});
+
+// Create and show the location (vars x and y are empty - why?)
+var infowindow = new UI.Window();
+infowindow.add(infotext);
+/*infowindow.show(); */
+
+
 Accel.init();
 main.show();
 Vibe.vibrate('short');
 main.on('accelTap', function(e) {
-  Vibe.vibrate('long');
-  main.title('Shaken not st...')
+  Vibe.vibrate('double');
+  main.title('GolfSwing');
+  main.subtitle('Shaken not stirred.');
+  main.body('Recording...');
+  infowindow.show();
 });
 
 /**main.on('click', 'up', function(e) {
