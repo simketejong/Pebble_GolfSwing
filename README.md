@@ -14,5 +14,3 @@ The Steps:
 - Pebble vibrates twice that recording is completed.
 - Is sends your current GPS possition and your dat to web site for processing.
 
-
-
