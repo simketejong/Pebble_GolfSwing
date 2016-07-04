@@ -24,7 +24,7 @@ var main = new UI.Card({
 /* GPS stuf */
 var locationOptions = {
   enableHighAccuracy: true, 
-  maximumAge: 10000, 
+  maximumAge: 10, 
   timeout: 10000
 };
 
@@ -45,14 +45,14 @@ function locationError(err) {
 
 Accel.init();
 main.show();
-Vibe.vibrate('short');
-main.on('accelTap', function(e) {
+/*Vibe.vibrate('short'); */
+/*main.on('accelTap', function(e) { */
   navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
-  Vibe.vibrate('double');
+/*  Vibe.vibrate('double'); */
   main.title('Position');
   main.subtitle('GPS');
-  main.body('lat= ' + myLat + ' lon= ' + myLong);
-});
+  main.body('lat= ' + myLat + ' lon= ' + myLong + '\nErrot: ' + myError);
+/*});*/
 
 /**main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
