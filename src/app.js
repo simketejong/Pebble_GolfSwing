@@ -42,14 +42,12 @@ function locationError(err) {
 navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
 Accel.init();
 main.on('accelTap', function(e) {
-Vibe.vibrate('double');
-main.show();
-/*while (myLat === 0){
+  Vibe.vibrate('double');
   main.title('Position');
   main.subtitle('GPS');
   main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
-  main.show(); */
-}
-main.title('Poep');
+  main.show(); 
+/*while (myLat === 0){
+}*/
 });
 
