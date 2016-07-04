@@ -6,6 +6,7 @@
 
 var UI = require('ui');
 var Vector2 = require('vector2');
+var Vibe = require('ui/vibe');
 
 var main = new UI.Card({
   title: 'GolfSwing',
@@ -17,6 +18,7 @@ var main = new UI.Card({
 });
 
 main.show();
+Vibe.vibrate('short');
 
 /**main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
