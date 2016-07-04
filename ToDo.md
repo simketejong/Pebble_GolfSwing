@@ -1,11 +1,3 @@
-### Solar System Exploration, 1950s – 1960s
+### ToDo stept
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+- [x] Use Javascript development for Pebble using PebbleCloud, using cloudpebble.net, enable GitHub integration
