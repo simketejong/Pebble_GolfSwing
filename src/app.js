@@ -51,7 +51,7 @@ navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locatio
 /*  Vibe.vibrate('double'); */
 main.title('Position');
 main.subtitle('GPS');
-main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nErrot: ' + myError);
+main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
 /*});*/
 
 /**main.on('click', 'up', function(e) {
