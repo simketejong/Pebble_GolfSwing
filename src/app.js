@@ -41,12 +41,12 @@ function locationError(err) {
 // Make an asynchronous request
 navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
 Accel.init();
+main.show(); 
 main.on('accelTap', function(e) {
   Vibe.vibrate('double');
   main.title('Position');
   main.subtitle('GPS');
   main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
-  main.show(); 
 /*while (myLat === 0){
 }*/
 });
