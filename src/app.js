@@ -23,7 +23,7 @@ main.show();
 Vibe.vibrate('short');
 main.on('accelTap', function(e) {
   Vibe.vibrate('long');
-})
+});
 
 /**main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
