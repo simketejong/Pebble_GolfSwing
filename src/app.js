@@ -30,28 +30,28 @@ var locationOptions = {
 
 // Get the location
 function locationSuccess(pos) {
-/*  console.log('\n****** START ******\nhere I am:\nlat= ' + pos.coords.latitude + ' lon= ' + pos.coords.longitude + '\n'); // Just to se that it works fine*/
-    myLat = pos.coords.latitude;
-    myLong = pos.coords.longitude;
-/*  console.log('My location\n' + myLat + ' and ' + myLong + '\n****** THE END  02 ******\n'); // This does also work fine */
+  console.log('\n****** START ******\nhere I am:\nlat= ' + pos.coords.latitude + ' lon= ' + pos.coords.longitude + '\n'); // Just to se that it works fine*/
+  myLat = pos.coords.latitude;
+  myLong = pos.coords.longitude;
+  console.log('My location\n' + myLat + ' and ' + myLong + '\n****** THE END  02 ******\n'); // This does also work fine */
 }
 
 function locationError(err) {
     myError = err.code + ' ' + err.message;
-/*  console.log('location error (' + err.code + '): ' + err.message);*/
+  console.log('location error (' + err.code + '): ' + err.message);
 }
 
 // Make an asynchronous request
-
+navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
 Accel.init();
 main.show();
 /*Vibe.vibrate('short'); */
 /*main.on('accelTap', function(e) { */
-  navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
+navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
 /*  Vibe.vibrate('double'); */
-  main.title('Position');
-  main.subtitle('GPS');
-  main.body('lat= ' + myLat + ' lon= ' + myLong + '\nErrot: ' + myError);
+main.title('Position');
+main.subtitle('GPS');
+main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nErrot: ' + myError);
 /*});*/
 
 /**main.on('click', 'up', function(e) {
