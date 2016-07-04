@@ -41,13 +41,14 @@ function locationError(err) {
 // Make an asynchronous request
 navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
 Accel.init();
-/*Vibe.vibrate('short'); */
-/*main.on('accelTap', function(e) { */
-navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
-/*  Vibe.vibrate('double'); */
-main.title('Position');
-main.subtitle('GPS');
-main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
+main.on('accelTap', function(e) {
+Vibe.vibrate('double');
+while ((myLat == 0) && (myLong == 0)){
+  main.title('Position');
+  main.subtitle('GPS');
+  main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
+  main.show();
+}
 main.show();
-/*});*/
+});
 
