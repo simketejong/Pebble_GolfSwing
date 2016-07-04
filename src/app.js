@@ -43,11 +43,11 @@ navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locatio
 Accel.init();
 main.show(); 
 main.on('accelTap', function(e) {
-  Vibe.vibrate('double');
-  main.title('Position');
-  main.subtitle('GPS');
-  main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
-/*while (myLat === 0){
-}*/
+  while (myLong === 0) {
+    Vibe.vibrate('double');
+    main.title('Position');
+    main.subtitle('GPS');
+    main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
+  }
 });
 
