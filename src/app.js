@@ -49,6 +49,5 @@ while (myLat != 0){
   main.body('lat= ' + myLat + '\nlon= ' + myLong + '\nError: ' + myError);
   main.show();
 }
-main.show();
 });
 
