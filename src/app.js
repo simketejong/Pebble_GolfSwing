@@ -7,6 +7,7 @@
 var UI = require('ui');
 var Vector2 = require('vector2');
 var Vibe = require('ui/vibe');
+var Accel = require('ui/accel');
 
 var main = new UI.Card({
   title: 'GolfSwing',
@@ -17,8 +18,12 @@ var main = new UI.Card({
   bodyColor: '#9a0036' // Hex colors
 });
 
+Accel.init();
 main.show();
 Vibe.vibrate('short');
+main.on('accelTap', function(e) {
+  Vibe.vibrate('long');
+})
 
 /**main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
