@@ -10,7 +10,7 @@ var Vector2 = require('vector2');
 var main = new UI.Card({
   title: 'Pebble.js',
   icon: 'images/menu_icon.png',
-  subtitle: 'Hello World!',
+  subtitle: 'GolfSwing!',
   body: 'Press any button.',
   subtitleColor: 'indigo', // Named colors
   bodyColor: '#9a0036' // Hex colors
