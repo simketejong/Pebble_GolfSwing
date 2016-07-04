@@ -14,7 +14,7 @@ var myError = "";
 
 var main = new UI.Card({
   title: 'GolfSwing',
-  icon: 'images/menu_icon.png',
+/* icon: 'images/menu_icon.png', */
   subtitle: 'GolfSwing!',
   body: 'Shake to activate',
   subtitleColor: 'indigo', // Named colors
@@ -27,7 +27,6 @@ var locationOptions = {
   maximumAge: 10000, 
   timeout: 10000
 };
-
 
 // Get the location
 function locationSuccess(pos) {
@@ -43,35 +42,16 @@ function locationError(err) {
 }
 
 // Make an asynchronous request
-navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
-
-
-// Create a text object 
-var infotext = new UI.Text(
-{
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-    text : 'GPS:\n',
-  font: 'Gothic 28',
-  color: 'white',
-  textAlign: 'center'   
-});
-
-// Create and show the location (vars x and y are empty - why?)
-var infowindow = new UI.Window();
-infowindow.add(infotext);
-/*infowindow.show(); */
-
 
 Accel.init();
 main.show();
 Vibe.vibrate('short');
 main.on('accelTap', function(e) {
+  navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
   Vibe.vibrate('double');
-  main.title('GolfSwing');
-  main.subtitle('Shaken not stirred.');
-  main.body('Recording...');
-  infowindow.show();
+  main.title('Position');
+  main.subtitle('GPS');
+  main.body('lat= ' + myLat + ' lon= ' + myLong);
 });
 
 /**main.on('click', 'up', function(e) {
